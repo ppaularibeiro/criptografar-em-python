@@ -1,0 +1,21 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+def cifra_rotacional(rotacao, texto):
+    texto_cifrado = ""
+    for caractere in texto:
+        if caractere.isalpha():
+            maiusculo = caractere.isupper()
+            codigo = ord(caractere.lower()) - 97
+            codigo_cifrado = (codigo + rotacao) % 26
+            if maiusculo:
+                texto_cifrado += chr(codigo_cifrado + 65)
+            else:
+                texto_cifrado += chr(codigo_cifrado + 97)
+        else:
+            texto_cifrado += caractere
+    return texto_cifrado
+
+rotacao = int(input("Digite o número de rotação: "))
+texto = input("Digite o texto a ser cifrado: ")
+texto_cifrado = cifra_rotacional(rotacao, texto)
+print("Texto cifrado:", texto_cifrado)
