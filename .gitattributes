@@ -1,5 +1,3 @@
-# Auto detect text files and perform LF normalization
-* text=auto
 def cifra_rotacional(rotacao, texto):
     texto_cifrado = ""
     for caractere in texto:
